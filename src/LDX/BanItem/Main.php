@@ -79,8 +79,6 @@ class Main extends PluginBase implements Listener {
                     if(isset($this->spys[strtolower($player->getName())])) {
                         $player->sendMessage($p->getName() . " tried a Banned Item: " . $event->getItem());
                     }
-                }
-                if(!($p->hasPermission("banitem") || $p->hasPermission("banitem.*") || $p->hasPermission("banitem.bypass"))) {
                     $p->sendMessage("[BanItem] That item is banned.");
                     $event->setCancelled(true);
                 }
@@ -97,8 +95,6 @@ class Main extends PluginBase implements Listener {
                 if(isset($this->spys[strtolower($player->getName())])) {
                     $player->sendMessage($p->getName() . " tried a Banned Item: " . $event->getItem());
                 }
-            }
-            if(!($p->hasPermission("banitem") || $p->hasPermission("banitem.*") || $p->hasPermission("banitem.bypass"))) {
                 $p->sendMessage("[BanItem] That item is banned.");
                 $event->setCancelled(true);
             }
@@ -116,7 +112,6 @@ class Main extends PluginBase implements Listener {
                     }
                 }
                 $this->getLogger()->info($p->getName() . " tried a Banned Item: " . $event->getItem() . " at " . $this->getPlayerPosition($p));
-                if(!($p->hasPermission("banitem") || $p->hasPermission("banitem.*") || $p->hasPermission("banitem.bypass"))) {
                     $p->sendMessage("[BanItem] That item is banned.");
                     $event->setCancelled(true);
                 }
