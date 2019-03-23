@@ -14,6 +14,7 @@ use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\player\PlayerItemConsumeEvent;
 use pocketmine\event\entity\EntityShootBowEvent;
 use pocketmine\utils\TextFormat as TEXTFORMAT;
+use pocketmine\event\player\PlayerItemHeldEvent;
 
 class Main extends PluginBase implements Listener {
 
