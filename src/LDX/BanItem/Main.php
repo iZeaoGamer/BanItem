@@ -37,6 +37,15 @@ class Main extends PluginBase implements Listener {
     }
 
 
+    public function onItemHeld(PlayerItemHeldEvent $ev){
+
+		$p = $ev->getPlayer();
+        
+         if($this->isBanned($event->getItem())) {
+             $p->getInventory()->removeItem($event->getItem());
+             $p->sendMessage(TEXTFORMAT:colorize("&4" . $event->getItem() . " &chas been removed from your inventory because this item is bannable."));
+         }
+    }
     public function onTouch(PlayerInteractEvent $event) {
         if ($event->isCancelled()) return;
         $p = $event->getPlayer();
